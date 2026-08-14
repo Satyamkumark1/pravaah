@@ -12,6 +12,7 @@ import { REGIME_CONFIG, RISK_CONFIG, type VideoSummary } from '@/types/domain';
 import { Camera, Clock, AlertTriangle, ArrowLeft, Upload, Square } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import RegimeBadge from '@/components/ui/RegimeBadge';
+import VideoDownloadButton from '@/components/ui/VideoDownloadButton';
 
 export default function CameraDetail() {
   const { id } = useParams<{ id: string }>();
@@ -106,6 +107,7 @@ export default function CameraDetail() {
                     <span>Frame {state.frame_id}</span>
                   </div>
                 )}
+                <VideoDownloadButton />
                 <label
                   className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg cursor-pointer transition-colors ${
                     uploading

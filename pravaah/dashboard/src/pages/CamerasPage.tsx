@@ -9,6 +9,7 @@ import { REGIME_CONFIG } from '@/types/domain';
 import { Camera, Link as LinkIcon, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import RegimeBadge from '@/components/ui/RegimeBadge';
+import VideoDownloadButton from '@/components/ui/VideoDownloadButton';
 
 export default function CamerasPage() {
   const { cameras } = usePravaahStore();
@@ -22,8 +23,13 @@ export default function CamerasPage() {
           <h1 className="text-2xl font-semibold text-white">Cameras</h1>
           <p className="text-sm text-slate-400 mt-1">All monitored cameras and their status</p>
         </div>
-        <div className="text-xs text-slate-500">
-          {cameraList.length} cameras
+        <div className="flex items-center gap-4">
+          <div className="relative">
+            <VideoDownloadButton />
+          </div>
+          <div className="text-xs text-slate-500">
+            {cameraList.length} cameras
+          </div>
         </div>
       </div>
 
